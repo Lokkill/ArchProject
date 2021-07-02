@@ -24,13 +24,13 @@ public class Order {
     public Order() {
     }
 
-    public Order(Long id, String title, String description, List<ProductDto> products, LocalDateTime createdAt, LocalDateTime updatedAt, UserDto responsibleUser) {
+    public Order(Long id, String title, String description, List<ProductDto> products, UserDto responsibleUser) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.products = products;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
         this.responsibleUser = responsibleUser;
     }
 
@@ -39,8 +39,8 @@ public class Order {
         this.title = order.getTitle();
         this.description = order.getDescription();
         this.products = order.getProducts();
-        this.createdAt = order.getCreatedAt();
-        this.updatedAt = order.getUpdatedAt();
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
         this.responsibleUser = order.getResponsibleUser();
     }
 
