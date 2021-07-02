@@ -16,5 +16,8 @@
         <module>ArcProjectCommon</module>
     </modules>
 
+    <properties>
+        <java.version>11</java.version>
+    </properties>
 
 </project>
