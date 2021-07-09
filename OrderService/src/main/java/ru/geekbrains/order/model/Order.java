@@ -3,6 +3,7 @@ package ru.geekbrains.order.model;
 
 import ru.geekbrains.order.dto.ProductDto;
 import ru.geekbrains.order.dto.UserDto;
+import ru.geekbrains.order.state.RequestStatus;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -18,6 +19,7 @@ public class Order {
     private String description;
     private List<ProductDto> products;
     private LocalDateTime createdAt;
+    private Status status;
     private LocalDateTime updatedAt;
     private UserDto responsibleUser;
 
@@ -29,6 +31,7 @@ public class Order {
         this.title = title;
         this.description = description;
         this.products = products;
+        this.status = new Status();
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
         this.responsibleUser = responsibleUser;
@@ -41,6 +44,7 @@ public class Order {
         this.products = order.getProducts();
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
+        this.status = order.getStatus();
         this.responsibleUser = order.getResponsibleUser();
     }
 
@@ -99,5 +103,13 @@ public class Order {
 
     public void setResponsibleUser(UserDto responsibleUser) {
         this.responsibleUser = responsibleUser;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void changeStatus(Status status) {
+        this.status = status;
     }
 }
