@@ -14,6 +14,7 @@
         <module>TaskService</module>
         <module>OrderService</module>
         <module>ArcProjectCommon</module>
+        <module>MainApp</module>
     </modules>
 
     <properties>
